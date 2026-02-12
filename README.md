@@ -24,12 +24,12 @@ Built with Streamlit for a simple interactive interface.
 
 This project follows a standard Retrieval-Augmented Generation pipeline:
 
-1. **PDF Processing** → Extract text from uploaded PDF
-2. **Chunking** → Split text into overlapping segments
-3. **Embeddings** → Convert chunks into dense vectors
-4. **Indexing** → Store vectors in FAISS
-5. **Retrieval** → Find relevant chunks for a query
-6. **Generation** → LLM generates answer using retrieved context
+1. **PDF Processing** → Extract text from uploaded PDF  
+2. **Chunking** → Split text into overlapping segments  
+3. **Embeddings** → Convert chunks into dense vectors  
+4. **Indexing** → Store vectors in FAISS  
+5. **Retrieval** → Find relevant chunks for a query  
+6. **Generation** → LLM generates answer using retrieved context  
 
 High-level flow:
 
@@ -41,21 +41,59 @@ Question → Embedding → Similarity Search → Context → LLM → Answer
 ## 🛠 Tech Stack
 
 **Frontend / UI**
+
 - Streamlit
 
 **Retrieval & Embeddings**
+
 - Sentence Transformers (`all-MiniLM-L6-v2`)
 - FAISS
 
 **LLM Inference**
+
 - Hugging Face Transformers
 - TinyLlama / Phi-3
 
 **Utilities**
+
 - PyPDF
 - NumPy
 - PyTorch
 
+---
+## ▶️ Usage
+
+1. Launch the Streamlit app
+2. Load an LLM model
+3. Upload a PDF
+4. Process PDF
+5. Ask questions
+
+---
+
+## 🤖 Supported Models
+
+### TinyLlama-1.1B-Chat
+
+- Faster
+- Lightweight
+- Lower answer quality
+
+### Phi-3-mini-4k-instruct
+
+- Slower
+- Better reasoning
+- Higher answer quality
+
+**Note:** GPU recommended for smoother inference.
+
+---
+
+## ⚠️ Limitations
+
+- No OCR support
+- Large PDFs may be slow
+- CPU inference is slower
 ---
 
 ## 📦 Installation
